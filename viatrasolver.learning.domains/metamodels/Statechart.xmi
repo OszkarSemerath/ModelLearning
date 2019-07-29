@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viatrasolver.domain.sgraph:Statechart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:viatrasolver.domain.sgraph="viatrasolver.domain.sgraph"
+    xsi:schemaLocation="viatrasolver.domain.sgraph yakindu_simplified.ecore"/>

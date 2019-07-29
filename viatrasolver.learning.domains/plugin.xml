@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><?eclipse version="3.0"?><!--
+--><plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated yakindu_simplified -->
+      <package
+            uri="viatrasolver.domain.sgraph"
+            class="sgraph.SgraphPackage"
+            genModel="metamodels/yakindu_simplified.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated FamMetamodel -->
+      <package
+            uri="http://www.inf.mit.bme.hu/viatrasolver/example/fam"
+            class="functionalarchitecture.FunctionalarchitecturePackage"
+            genModel="metamodels/FamMetamodel.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Family -->
+      <package
+            uri="family"
+            class="family.FamilyPackage"
+            genModel="metamodels/Family.genmodel"/>
+   </extension>
+  <extension id="extension.derived.familytree.queries.children" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Person" feature-name="children" package-nsUri="family"/>
+  </extension>
+  <extension id="extension.derived.familytree.queries.relative" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Person" feature-name="relative" package-nsUri="family"/>
+  </extension>
+  <extension id="extension.derived.functionalarchitecture.queries.model" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="FunctionalElement" feature-name="model" package-nsUri="http://www.inf.mit.bme.hu/viatrasolver/example/fam"/>
+  </extension>
+  <extension id="extension.derived.functionalarchitecture.queries.type" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Function" feature-name="type" package-nsUri="http://www.inf.mit.bme.hu/viatrasolver/example/fam"/>
+  </extension>
+  <extension id="familytree.queries.Familytree" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:familytree.queries.Familytree" id="familytree.queries.Familytree">
+      <query-specification fqn="familytree.queries.children"/>
+      <query-specification fqn="familytree.queries.circleInChildren"/>
+      <query-specification fqn="familytree.queries.directRelative"/>
+      <query-specification fqn="familytree.queries.relative"/>
+      <query-specification fqn="familytree.queries.unrelatedPersons"/>
+      <query-specification fqn="familytree.queries.closeRelativeWithChildrens"/>
+    </group>
+  </extension>
+</plugin>

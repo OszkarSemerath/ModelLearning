@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Models
+Bundle-SymbolicName: viatrasolver.learning.domains.models
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: viatrasolver.learning.domains.models
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: viatrasolver.learning.domains;bundle-version="1.0.0",
+ viatrasolver.learning.domains.queries;bundle-version="1.0.0"

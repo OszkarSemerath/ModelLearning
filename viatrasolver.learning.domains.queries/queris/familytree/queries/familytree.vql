@@ -1,0 +1,96 @@
+package familytree.queries
+
+import "family"
+
+@QueryBasedFeature
+pattern children(parent: Person, child : Person) {
+	Person.father(child,parent);
+} or {
+	Person.mother(child,parent);
+}
+
+@Constraint(key = {person}, message = "children circle", severity = "error")
+pattern circleInChildren(person: Person) {
+	find children+(person,person);
+} or {
+	find children(person,person);
+}
+
+pattern directRelative(person1 : Person, person2 : Person) {
+	find children(person1,person2);
+} or {
+	find children(person2,person1);
+}
+
+@QueryBasedFeature
+pattern relative(person1 : Person, person2 : Person) {
+	find directRelative+(person1, person2);
+}
+
+@Constraint(key = {person1, person2}, message = "closely related persons cannot have children", severity = "error")
+pattern closeRelativeWithChildrens1(person1: Person, person2: Person)
+{
+	// with parent
+	find children+(person1,person2);
+	person1 != person2;
+	find children(person1,child);
+	find children(person2,child);
+}
+@Constraint(key = {person1, person2}, message = "closely related persons cannot have children", severity = "error")
+pattern closeRelativeWithChildrens2(person1: Person, person2: Person)
+{
+	// with siblings
+	find children+(common,person1);
+	find children+(common,person2);
+	
+	person1 != person2;
+	find children(person1,child);
+	find children(person2,child);
+}
+
+//@Constraint(key = {person1, person2}, message = "closely related persons cannot have children", severity = "error")
+//pattern closeRelativeWithChildrens2(person1: Person, person2: Person)
+//{
+//	// with siblings
+//	find children(common,person1);
+//	find children(common,person2);
+//	
+//	person1 != person2;
+//	find children(person1,child);
+//	find children(person2,child);
+//}
+//@Constraint(key = {person1, person2}, message = "closely related persons cannot have children", severity = "error")
+//pattern closeRelativeWithChildrens3(person1: Person, person2: Person)
+//{
+//	// with Grandparent
+//	find children(person1,middle);
+//	find children(middle,person2);
+//	
+//	find children(person1,child);
+//	find children(person2,child);
+//}
+//@Constraint(key = {person1, person2}, message = "closely related persons cannot have children", severity = "error")
+//pattern closeRelativeWithChildrens4(person1: Person, person2: Person)
+//{
+//	// uncle
+//	find children(common,person1);
+//	find children(common,middle);
+//	find children(middle,person2);
+//	person1 != middle;
+//	
+//	find children(person1,child);
+//	find children(person2,child);
+//}
+//@Constraint(key = {person1, person2}, message = "closely related persons cannot have children", severity = "error")
+//pattern closeRelativeWithChildrens5(person1: Person, person2: Person)
+//{
+//	// cousin
+//	find children(common,middle1);
+//	find children(middle1,person1);
+//	find children(common,middle2);
+//	find children(middle2,person2);
+//	middle1 != middle2;
+//	person1 != person2;
+//	find children(person1,child);
+//	find children(person2,child);
+//}

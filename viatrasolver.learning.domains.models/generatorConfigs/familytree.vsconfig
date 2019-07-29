@@ -1,0 +1,24 @@
+import epackage "family"
+import viatra "familytree.queries.Familytree"
+
+generate {
+	metamodel = { package family excluding {
+		Person.age, Person.name, Person.size, Person.weight, Person.relative, Person.children
+	}}
+	constraints = { package familytree.queries /*excluding {closeRelativeWithChildrens4,closeRelativeWithChildrens5}*/ }
+	partial-model = { "platform:/resource/viatrasolver.learning.domains/metamodels/Family.xmi"}
+	solver = ViatraSolver
+	scope = {
+		#node += 29
+	}
+	config = {
+		log-level = none
+	}
+	
+	runs = 600
+	
+	debug =			"platform:/resource/viatrasolver.learning.domains.models/examples/familytree/ViatraSolver-restart/"
+	log =			"platform:/resource/viatrasolver.learning.domains.models/examples/familytree/ViatraSolver-restart/log.txt"
+	output =		"platform:/resource/viatrasolver.learning.domains.models/examples/familytree/ViatraSolver-restart/models"
+	statistics =	"platform:/resource/viatrasolver.learning.domains.models/examples/familytree/ViatraSolver-restart/statistics.csv"
+}

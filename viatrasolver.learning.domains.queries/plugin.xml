@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="extension.derived.familytree.queries.children" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Person" feature-name="children" package-nsUri="family"/>
+  </extension>
+  <extension id="extension.derived.familytree.queries.relative" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Person" feature-name="relative" package-nsUri="family"/>
+  </extension>
+  <extension id="extension.derived.functionalarchitecture.queries.model" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="FunctionalElement" feature-name="model" package-nsUri="http://www.inf.mit.bme.hu/viatrasolver/example/fam"/>
+  </extension>
+  <extension id="extension.derived.functionalarchitecture.queries.type" point="org.eclipse.viatra.query.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="Function" feature-name="type" package-nsUri="http://www.inf.mit.bme.hu/viatrasolver/example/fam"/>
+  </extension>
+  <extension id="familytree.queries.Familytree" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:familytree.queries.Familytree" id="familytree.queries.Familytree">
+      <query-specification fqn="familytree.queries.children"/>
+      <query-specification fqn="familytree.queries.circleInChildren"/>
+      <query-specification fqn="familytree.queries.directRelative"/>
+      <query-specification fqn="familytree.queries.relative"/>
+      <query-specification fqn="familytree.queries.closeRelativeWithChildrens1"/>
+      <query-specification fqn="familytree.queries.closeRelativeWithChildrens2"/>
+    </group>
+  </extension>
+  <extension id="functionalarchitecture.queries.FamPatterns" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:functionalarchitecture.queries.FamPatterns" id="functionalarchitecture.queries.FamPatterns">
+      <query-specification fqn="functionalarchitecture.queries.terminatorAndInformation"/>
+      <query-specification fqn="functionalarchitecture.queries.type"/>
+      <query-specification fqn="functionalarchitecture.queries.rootElements"/>
+      <query-specification fqn="functionalarchitecture.queries.parent"/>
+      <query-specification fqn="functionalarchitecture.queries.model"/>
+      <query-specification fqn="functionalarchitecture.queries.hasRoot"/>
+      <query-specification fqn="functionalarchitecture.queries.hasInt"/>
+      <query-specification fqn="functionalarchitecture.queries.hasLeaf"/>
+    </group>
+  </extension>
+  <extension id="sgraph.queries.Validation" point="org.eclipse.viatra.query.runtime.queryspecification">
+    <group group="org.eclipse.viatra.query.runtime.extensibility.SingletonExtensionFactory:sgraph.queries.Validation" id="sgraph.queries.Validation">
+      <query-specification fqn="sgraph.queries.entryInRegion"/>
+      <query-specification fqn="sgraph.queries.noEntryInRegion"/>
+      <query-specification fqn="sgraph.queries.multipleEntryInRegion"/>
+      <query-specification fqn="sgraph.queries.transition"/>
+      <query-specification fqn="sgraph.queries.incomingToEntry"/>
+      <query-specification fqn="sgraph.queries.noOutgoingTransitionFromEntry"/>
+      <query-specification fqn="sgraph.queries.multipleTransitionFromEntry"/>
+      <query-specification fqn="sgraph.queries.outgoingFromExit"/>
+      <query-specification fqn="sgraph.queries.outgoingFromFinal"/>
+      <query-specification fqn="sgraph.queries.noStateInRegion"/>
+      <query-specification fqn="sgraph.queries.StateInRegion"/>
+      <query-specification fqn="sgraph.queries.choiceHasNoOutgoing"/>
+      <query-specification fqn="sgraph.queries.choiceHasNoIncoming"/>
+      <query-specification fqn="sgraph.queries.synchHasNoOutgoing"/>
+      <query-specification fqn="sgraph.queries.synchHasNoIncoming"/>
+      <query-specification fqn="sgraph.queries.SynchronizedIncomingInSameRegion"/>
+      <query-specification fqn="sgraph.queries.notSynchronizingStates"/>
+      <query-specification fqn="sgraph.queries.hasMultipleOutgoingTrainsition"/>
+      <query-specification fqn="sgraph.queries.hasMultipleIncomingTrainsition"/>
+      <query-specification fqn="sgraph.queries.SynchronizedRegionsAreNotSiblings"/>
+      <query-specification fqn="sgraph.queries.child"/>
+      <query-specification fqn="sgraph.queries.SynchronizedRegionDoesNotHaveMultipleRegions"/>
+      <query-specification fqn="sgraph.queries.hasMultipleRegions"/>
+      <query-specification fqn="sgraph.queries.synchThree"/>
+    </group>
+  </extension>
+</plugin>

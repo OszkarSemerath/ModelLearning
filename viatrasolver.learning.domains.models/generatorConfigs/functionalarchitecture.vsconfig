@@ -1,0 +1,78 @@
+import epackage "http://www.inf.mit.bme.hu/viatrasolver/example/fam"
+//import viatra "viatrasolver.domain.sgraph.queries.Validation"
+////generate {
+////	metamodel = { package sgraph excluding { Synchronization }}
+//////	constraints = {
+//////		package viatrasolver.domain.sgraph.queries excluding {
+//////			synchHasNoIncoming,
+//////			synchHasNoOutgoing,
+//////			SynchronizedIncomingInSameRegion,
+//////			SynchronizedRegionDoesNotHaveMultipleRegions,
+//////			SynchronizedRegionsAreNotSiblings,
+//////			synchThree
+//////		}
+//////	}
+////	partial-model = { "platform:/resource/viatrasolver.domain.sgraph/model/Statechart.xmi"}
+////	solver = ViatraSolver
+////	scope = {
+////		#node += 29
+////	}
+////	config = {
+////		log-level = none,
+////		"symmetry" = "1"
+////	}
+////	
+////	number = 30
+////	runs = 20
+////	
+////	debug =			"platform:/resource/DiversityModels/Yak/incremental/debug"
+////	log =			"platform:/resource/DiversityModels/Yak/incremental/log.txt"
+////	output =		"platform:/resource/DiversityModels/Yak/incremental/models"
+////	statistics =	"platform:/resource/DiversityModels/Yak/incremental/statistics.csv"
+////}
+//
+//generate {
+//	metamodel = { package sgraph excluding { Synchronization }}
+//	partial-model = { "platform:/resource/viatrasolver.domain.sgraph/model/Statechart.xmi"}
+//	solver = AlloySolver
+//	scope = {
+//		#node += 29,
+//		#int += {0}
+//	}
+//	config = {
+//		log-level = none,
+//		"randomize" = "true",
+//		"symmetry" = "20"
+//	}
+//	
+//	number = 30
+//	runs = 20
+//	
+//	debug =			"platform:/resource/DiversityModels/Yak/a20/debug"
+//	log =			"platform:/resource/DiversityModels/Yak/a20/log.txt"
+//	output =		"platform:/resource/DiversityModels/Yak/a20/models"
+//	statistics =	"platform:/resource/DiversityModels/Yak/a20/statistics.csv"
+//}
+//
+//generate {
+//	metamodel = { package sgraph excluding { Synchronization }}
+//	partial-model = { "platform:/resource/viatrasolver.domain.sgraph/model/Statechart.xmi"}
+//	solver = AlloySolver
+//	scope = {
+//		#node += 29,
+//		#int += {0}
+//	}
+//	config = {
+//		log-level = none,
+//		"randomize" = "true",
+//		"symmetry" = "0"
+//	}
+//	
+//	number = 30
+//	runs = 20
+//	
+//	debug =			"platform:/resource/DiversityModels/Yak/a0/debug"
+//	log =			"platform:/resource/DiversityModels/Yak/a0/log.txt"
+//	output =		"platform:/resource/DiversityModels/Yak/a0/models"
+//	statistics =	"platform:/resource/DiversityModels/Yak/a0/statistics.csv"
+//}
